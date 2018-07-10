@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
 
   scope :old, -> {where('created_at < ?', 40.minutes.ago)}
 
+  belongs_to :autor
   # before_create :annotate_autor
   #
   # def annotate_autor
