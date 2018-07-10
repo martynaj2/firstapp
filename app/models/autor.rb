@@ -1,3 +1,3 @@
 class Autor < ActiveRecord::Base
-  has_one :post
+  has_many :post
 end
