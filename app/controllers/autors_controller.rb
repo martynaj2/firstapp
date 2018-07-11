@@ -1,4 +1,7 @@
 class AutorsController < ApplicationController
+
+  @autorstry = Autor.all
+
   def index
     #zmienna lokalna, nie jest widoczna w widoku, wiec robimy zmienna instacji
     @autors = Autor.all

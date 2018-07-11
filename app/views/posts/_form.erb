@@ -17,7 +17,7 @@
   <%= f.text_area :content %>
   <hr />
   <%= f.label :autor_id %>
-  <%= f.text_field :autor_id %>
+  <%= f.collection_select(:autor_id, Autor.all, :id, :name) %>
   <hr />
   <%= f.submit 'save' %>
 <% end %>
