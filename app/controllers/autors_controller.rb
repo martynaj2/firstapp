@@ -12,4 +12,21 @@ class AutorsController < ApplicationController
   def new
     @autor = Autor.new
   end
+
+# redirect robi pelne przekierowanie, render nie robi prawie nic,
+# bierze tylko caly html i wkleja cos innego
+  def create
+    @autor = Autor.new(autor_params)
+      if @autor.save
+        redirect_to autors_path
+      else
+        render :new
+      end
+  end
+
+  private
+
+  def autor_params
+      params.require(:autor).permit(:name, :surname, :age)
+  end
 end
