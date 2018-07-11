@@ -1,4 +1,4 @@
-class Author < ActiveRecord::database
+class Author < ActiveRecord::Base
   validates :name, :surname, presence: true
   validates :name, length: { minimum: 2 }
   validates :surname, length: { minimum: 5}
