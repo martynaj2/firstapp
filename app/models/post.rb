@@ -8,6 +8,9 @@ class Post < ActiveRecord::Base
 
   belongs_to :autor
 
+  def post_title
+    "#{title}"
+  end
   # has_many :autor_posts
   # has_many :autors, through: :autor_posts
   # before_create :annotate_autor
