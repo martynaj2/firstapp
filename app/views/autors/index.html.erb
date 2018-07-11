@@ -6,7 +6,7 @@
       <!-- railsowa metoda pomocnicza, co wyswietlone, gdzie przeniesie -->
       <%= link_to autor.fullname, autor_path(id: autor.id) %>
       <%= link_to 'Edit', edit_autor_path(id: autor.id) %>
-      <%= link_to 'Delete', autor_path(id: autor.id), method: :delete %>
+      <%= link_to 'Delete', autor_path(id: autor.id), method: :delete, data: { confirm: 'Are you sure?' } %>
       <!-- <%= "#{autor.name} #{autor.surname}" %> -->
     </li>
   <% end %>
