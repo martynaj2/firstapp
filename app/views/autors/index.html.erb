@@ -1,0 +1,9 @@
+<h1>List of all authors</h1>
+
+<ul>
+  <% @autors.each do |autor| %>
+    <li>
+      <%= "#{autor.name} #{autor.surname}" %>
+    </li>
+  <% end %>
+</ul>
