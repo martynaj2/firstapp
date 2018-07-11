@@ -4,7 +4,7 @@
   <% @autors.each do |autor| %>
     <li>
       <!-- railsowa metoda pomocnicza, co wyswietlone, gdzie przeniesie -->
-      <%= link_to "#{autor.name} #{autor.surname}", autor_path(id: autor.id)%>
+      <%= link_to autor.fullname, autor_path(id: autor.id)%>
       <!-- <%= "#{autor.name} #{autor.surname}" %> -->
     </li>
   <% end %>

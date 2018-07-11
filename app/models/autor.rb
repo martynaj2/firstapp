@@ -6,5 +6,10 @@ class Autor < ActiveRecord::Base
   # has_many :autor_posts
   # has_many :posts, through: :autor_posts
 
+# nie musimy pisac return bo bedzie automatycznie zwrocona
+  def fullname
+    "#{name} #{surname}"
+  end
+
   has_many :posts
 end

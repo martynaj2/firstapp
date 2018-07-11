@@ -8,4 +8,8 @@ class AutorsController < ApplicationController
     #chcemy znalezc konkretnego autora po id, z URL, /autors/xx
     @autor = Autor.find(params[:id])
   end
+
+  def new
+    @autor = Autor.new
+  end
 end
