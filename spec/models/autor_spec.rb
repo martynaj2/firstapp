@@ -35,7 +35,8 @@ end
 
 
 describe 'callbacks' do
-  let(:author) {  Autor.create(name: 'test', surname: 'testy') }
+  #bo w factories musze miec nazwe z MODELU
+  let(:author) { create(:autor, age: nil) }
   it 'should set age to 25 if none was given' do
     expect(author.age).to eq(25)
   end
@@ -46,9 +47,12 @@ describe 'relations' do
 end
 
 describe '#fullname' do
-  let(:author) { Autor.new(name: 'test', surname: 'testy') }
+  # create(:author)
+  # build(:author)
+  # #build nie zapisuje w bazie
+  let(:author) { create(:autor) }
   it 'should have working #fullname method' do
-    expect(author.fullname).to eq('test testy')
+    expect(author.fullname).to eq('Andrzej Tester')
   end
 end
 
