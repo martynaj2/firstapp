@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
   validates :content, length: { in: 10..500 }
 
   scope :old, -> {where('created_at < ?', 40.minutes.ago)}
+  scope :short, -> {where('LENGTH(content) < 20')}
+
 
   belongs_to :autor
 

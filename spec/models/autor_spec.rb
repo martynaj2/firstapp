@@ -23,4 +23,14 @@ RSpec.describe Autor, type: :model do
     expect(author.age).to eq(25)
   end
 
+  it 'should have many posts' do
+    t = Autor.reflect_on_association(:posts)
+    expect(t.macro).to eq(:has_many)
+  end
+
+  it 'should have working #fullname method' do
+    author = Autor.new(name: 'test', surname: 'testy')
+    expect(author.fullname).to eq('test testy')
+  end
+
 end
