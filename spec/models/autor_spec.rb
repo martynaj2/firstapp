@@ -52,7 +52,7 @@ describe '#fullname' do
   # #build nie zapisuje w bazie
   let(:author) { create(:autor) }
   it 'should have working #fullname method' do
-    expect(author.fullname).to eq('Andrzej Tester')
+    expect(author.fullname).to eq("#{author.name} #{author.surname}")
   end
 end
 
