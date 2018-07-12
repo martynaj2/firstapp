@@ -1,7 +1,7 @@
 class Autor < ActiveRecord::Base
   validates :name, :surname, presence: true
   validates :name, length: { minimum: 2 }
-  validates :surname, length: { minimum: 5}
+  validates :surname, length: { minimum: 2}
   has_many :posts
   # has_many :autor_posts
   # has_many :posts, through: :autor_posts

@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :post do
-    title 'Tytul postu'
+    title { Faker::Movie.quote }
     content 'dsadsadasdasdas'
   end
 end
