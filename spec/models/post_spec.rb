@@ -7,16 +7,20 @@ RSpec.describe Post, type: :model do
     end
   end
 
+describe '#post_title' do
+  let(:post1) { Post.new(title: 'tytul') }
   it 'should have working #post_title method' do
-    post1 = Post.new(title: 'tytul')
     expect(post1.post_title).to eq('tytul')
   end
+end
+
 
 describe 'scopes' do
+  # musze miec autora stworzonego bo inaczej nie przejdzie bez id
+  let(:autor5) { Autor.create(name: 'Mackiej', surname: 'Fajny') }
+  let(:post2) { Post.create(title: 'dasdasdasdeeee', content: 'tujestmniejniz20', autor_id: autor5.id) }
+  let(:post3) { Post.create(title: 'test', content: 'atujestduzoduzoduzoduzoduzoduzoduzowiecej', autor_id: autor5.id) }
   it 'should have short scope' do
-    autor5 = Autor.create(name: 'Mackiej', surname: 'Fajny')
-    post2 = Post.create(title: 'dasdasdasdeeee', content: 'tujestmniejniz20', autor_id: 1)
-    post3 = Post.create(title: 'test', content: 'atujestduzoduzoduzoduzoduzoduzoduzowiecej', autor_id: 1)
     expect(Post.short).not_to include(post3)
     expect(Post.short).to include(post2)
   end

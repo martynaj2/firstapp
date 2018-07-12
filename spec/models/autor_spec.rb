@@ -18,18 +18,25 @@ RSpec.describe Autor, type: :model do
   end
 
 describe 'scopes' do
+  let(:author1) { Autor.create(name: 'test', surname: 'testy', age: 15) }
+  let(:author2) { Autor.create(name: 'test', surname: 'testy', age: 55) }
   it 'should have old scope' do
-    author1 = Autor.create(name: 'test', surname: 'testy', age: 15)
-    author2 = Autor.create(name: 'test', surname: 'testy', age: 55)
     expect(Autor.old).to include(author2)
     expect(Autor.old).not_to include(author1)
+  end
+
+  it 'should have young scope' do
+    # author1 mozemy to dodac jak chcemy miec pewnosc ze stworzy obiekt
+    # albo dajemy let! ale tego unikamy
+    expect(Autor.young).to include(author1)
+    expect(Autor.young).not_to include(author2)
   end
 end
 
 
 describe 'callbacks' do
+  let(:author) {  Autor.create(name: 'test', surname: 'testy') }
   it 'should set age to 25 if none was given' do
-    author = Autor.create(name: 'test', surname: 'testy')
     expect(author.age).to eq(25)
   end
 end
@@ -38,11 +45,11 @@ describe 'relations' do
   it { should have_many(:posts) }
 end
 
-  describe '#fullname' do
-    it 'should have working #fullname method' do
-      author = Autor.new(name: 'test', surname: 'testy')
-      expect(author.fullname).to eq('test testy')
-    end
+describe '#fullname' do
+  let(:author) { Autor.new(name: 'test', surname: 'testy') }
+  it 'should have working #fullname method' do
+    expect(author.fullname).to eq('test testy')
   end
+end
 
 end

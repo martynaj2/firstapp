@@ -7,7 +7,7 @@ class Autor < ActiveRecord::Base
   # has_many :posts, through: :autor_posts
 
   scope :old, ->{ where('age > 30')}
-
+  scope :young, ->{ where('age < 20')}
   before_create :default_age
 
 # nie musimy pisac return bo bedzie automatycznie zwrocona
