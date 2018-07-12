@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  it 'should have proper attributes' do
-    expect(subject.attributes).to include('title', 'content')
+  describe 'attributes' do
+    it 'should have proper attributes' do
+      expect(subject.attributes).to include('title', 'content')
+    end
   end
 
   it 'should have working #post_title method' do
@@ -10,9 +12,18 @@ RSpec.describe Post, type: :model do
     expect(post1.post_title).to eq('tytul')
   end
 
+describe 'scopes' do
   it 'should have short scope' do
-    post2 = Post.create(title: 'dasdasdasdeeee', content: 'ffffffvvvvvvv', autor_id: 11)
-    post3 = Post.create(title: 'test', content: '123456789101234567891012345678910', autor_id: 11)
+    autor5 = Autor.create(name: 'Mackiej', surname: 'Fajny')
+    post2 = Post.create(title: 'dasdasdasdeeee', content: 'tujestmniejniz20', autor_id: 1)
+    post3 = Post.create(title: 'test', content: 'atujestduzoduzoduzoduzoduzoduzoduzowiecej', autor_id: 1)
     expect(Post.short).not_to include(post3)
+    expect(Post.short).to include(post2)
   end
+end
+
+describe 'relations' do
+  it { should belong_to(:autor) }
+end
+
 end

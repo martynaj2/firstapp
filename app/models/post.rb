@@ -1,6 +1,5 @@
 class Post < ActiveRecord::Base
   validates :title, :content, presence: true
-  validates :title, uniqueness: true
   validates :title, length: { maximum: 80 }
   validates :content, length: { in: 10..500 }
 
@@ -10,9 +9,12 @@ class Post < ActiveRecord::Base
 
   belongs_to :autor
 
+
   def post_title
     "#{title}"
   end
+
+
   # has_many :autor_posts
   # has_many :autors, through: :autor_posts
   # before_create :annotate_autor
