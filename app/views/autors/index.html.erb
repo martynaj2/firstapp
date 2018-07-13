@@ -30,3 +30,13 @@
   <hr />
   <%= f.submit 'save' %>
 <% end %>
+
+<% if @autor.errors.any? %>
+  <ul>
+    <% @autor.errors.full_messages.each do |msg| %>
+      <li>
+        <%= msg %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

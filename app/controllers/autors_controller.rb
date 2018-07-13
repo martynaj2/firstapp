@@ -37,12 +37,15 @@ class AutorsController < ApplicationController
   end
 
   def destroy
-    autor = Autor.find(params[:id])
-    if autor.destroy
-      redirect_to autors_path, notice: 'Author was deleted'
-    else
-      redirect_to autors_path, alert: 'Error'
-    end
+    # autor = Autor.find(params[:id])
+    # if autor.destroy
+    #   redirect_to autors_path, notice: 'Author was deleted'
+    # else
+    #   redirect_to autors_path, alert: 'Error'
+    # end
+
+    @autor = Autor.find(params[:id])
+    @autor.destroy
   end
 
 

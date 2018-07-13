@@ -1,12 +1,12 @@
-
-<!-- wyglada tak samo jak new -->
-<!-- dlatego uzyjemy _form.erb -->
-<% if @autor.errors.any? %>
-  <ul>
-    <% @autor.errors.full_messages.each do |msg| %>
-      <li>
-        <%= msg %>
-      </li>
-    <% end %>
-  </ul>
+<%=  form_for @autor, remote: true, html: { class: "new-autor" }  do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <hr />
+  <%= f.label :surname %>
+  <%= f.text_field :surname %>
+  <hr />
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <hr />
+  <%= f.submit 'save' %>
 <% end %>
