@@ -2,15 +2,19 @@
   <h1>All posts</h1>
 </div>
 
-<ol>
+<div class="container">
   <% @posts.each do |post| %>
-    <li>
-     <%= link_to post.post_title, post_path(id: post.id) %>
-     <!-- <%= "treść: #{post.content} autor(id): #{post.autor_id}" %> -->
-     <%= link_to 'Edit', edit_post_path(id: post.id) %>
-     <%= link_to 'Delete', post_path(id: post.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
+    <table class="table">
+    <tbody>
+      <tr>
+         <td class="col-md-8"><%= link_to post.post_title, post_path(id: post.id) %></td>
+         <!-- <%= "treść: #{post.content} autor(id): #{post.autor_id}" %> -->
+         <td><%= link_to 'Edit', edit_post_path(id: post.id) %></td>
+         <td><%= link_to 'Delete', post_path(id: post.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       </tr>
+     </tbody>
+   </table>
  <% end %>
-</ol>
+</div>
 <hr />
 <%= link_to 'Add new post', new_post_path %>
