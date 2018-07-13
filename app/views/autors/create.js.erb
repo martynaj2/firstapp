@@ -1,7 +1,7 @@
 <% if @autor.persisted? %>
   $('.autors').append('<%= escape_javascript render 'autor', autor: @autor%>')
 <% else %>
-  alert('ogarnij sie');
+  alert('Try again');
   alert('<%= j @autor.errors.full_messages.join (',  ') %>');
 <% end %>
 

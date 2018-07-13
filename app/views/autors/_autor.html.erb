@@ -1,7 +1,8 @@
 <div class="row" data-autor-id="<%= autor.id %>">
   <!-- railsowa metoda pomocnicza, co wyswietlone, gdzie przeniesie -->
-  <div class="col-sm-12 col-md-8"><%= link_to autor.fullname, autor_path(id: autor.id) %></div>
-  <div class="col-sm-12 col-md-2"><%= link_to 'Edit', edit_autor_path(id: autor.id),role: 'button', class:'btn btn-primary' %></div>
-  <div class="col-sm-12 col-md-2"><%= link_to 'Delete', autor_path(id: autor.id), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, role: 'button', class:'btn btn-danger' %></div>
-  <!-- <%= "#{autor.name} #{autor.surname}" %> -->
+  <div class="col-sm-12 col-md-9"><%= link_to autor.fullname, autor_path(id: autor.id) %></div>
+  <div class="col-md-3">
+    <%= link_to 'Edit', edit_autor_path(id: autor.id),role: 'button', class:'btn btn-primary text-center' %>
+    <%= link_to 'Delete', autor_path(id: autor.id), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, role: 'button', class:'btn btn-danger text-center' %>
+  </div>
 </div>

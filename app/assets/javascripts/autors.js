@@ -1,5 +1,3 @@
-$(function() {
-  $('h1').css({color: "pink"});
 
 // nasluchiwanie na zdarzenie
   $('.new-autor').on('ajax:send', function(){

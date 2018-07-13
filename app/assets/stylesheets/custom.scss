@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Gaegu|Montserrat|Quicksand');
+
+body {
+  padding-top: 1px;
+  background-color: #fffcff;
+  font-family: 'Quicksand';
+}
+
+a, label {
+  font-size: 13px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+.home-header {
+  color: #290066;
+}
+
+.navbar-custom {
+  background-color: #ede7da80;
+  margin:10px 30px 80px 30px;
+  // border: 2px solid #3f2c32;
+  border-radius: 25px;
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #b8374a82;
+    margin-right: 5px;
+    font-size: 20px;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #621d28;
+    border-bottom: 2px solid red;
+}
+
+.navbar-logo {
+  margin-right: 20px;
+}
+
+.container {
+  width: 50%;
+}
+
+.autors {
+  margin-bottom: 20px;
+}
+
+.new-autor {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#autor_age {
+  width: 60px;
+}
+
+.btn-danger, .btn-primary, .btn-outline-success {
+  font-size: 13px;
+}
+
+.row {
+  height: 40px;
+  line-height: 40px;
+  white-space: nowrap;
+}
+
+.row:nth-child(even) {
+  background-color: #E1EDED66;
+}
+.row:nth-child(odd) {
+  background-color: #FFF;
+}
+
+.home-img {
+  text-align: center;
+  display: block;
+}
