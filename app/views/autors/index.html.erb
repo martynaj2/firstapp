@@ -2,6 +2,8 @@
   <h1>List of all authors</h1>
 </div>
 
+<img style="display: none;" src="https://loading.io/spinners/balls/lg.circle-slack-loading-icon.gif"/>
+
 <div class="container autors">
   <% @autors.each do |autor| %>
   <!-- kazdy row ma zawsze 12 kolumn -->
@@ -16,7 +18,7 @@
 
 <hr />
 <!-- forumlarze metodami pomocniczymu -->
-<%=  form_for @autor, remote: true do |f| %>
+<%=  form_for @autor, remote: true, html: { class: "new-autor" }  do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <hr />
