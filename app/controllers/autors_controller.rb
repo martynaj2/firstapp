@@ -5,6 +5,7 @@ class AutorsController < ApplicationController
   def index
     #zmienna lokalna, nie jest widoczna w widoku, wiec robimy zmienna instacji
     @autors = Autor.all
+    @autor = Autor.new #przenieslismy formularz new na index
   end
 
   def show
@@ -19,12 +20,7 @@ class AutorsController < ApplicationController
 # redirect robi pelne przekierowanie, render nie robi prawie nic,
 # bierze tylko caly html i wkleja cos innego
   def create
-    @autor = Autor.new(autor_params)
-      if @autor.save
-        redirect_to autors_path, notice: 'Author was created'
-      else
-        render :new
-      end
+    @autor = Autor.create(autor_params)
   end
 
   def edit

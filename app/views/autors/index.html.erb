@@ -2,19 +2,29 @@
   <h1>List of all authors</h1>
 </div>
 
-<div class="container">
+<div class="container autors">
   <% @autors.each do |autor| %>
   <!-- kazdy row ma zawsze 12 kolumn -->
-    <div class="row">
-      <!-- railsowa metoda pomocnicza, co wyswietlone, gdzie przeniesie -->
-      <div class="col-sm-12 col-md-8"><%= link_to autor.fullname, autor_path(id: autor.id) %></div>
-      <div class="col-sm-12 col-md-2"><%= link_to 'Edit', edit_autor_path(id: autor.id),role: 'button', class:'btn btn-primary' %></div>
-      <div class="col-sm-12 col-md-2"><%= link_to 'Delete', autor_path(id: autor.id), method: :delete, data: { confirm: 'Are you sure?' }, role: 'button', class:'btn btn-danger' %></div>
-      <!-- <%= "#{autor.name} #{autor.surname}" %> -->
-    </div>
+    <%= render 'autor', autor: autor %>
   <% end %>
-</div
+</div>
+
 
 <hr />
 
 <div class="col-md-2"><%= link_to 'new author', new_autor_path, role: 'button', class:'btn btn-success' %></div>
+
+<hr />
+<!-- forumlarze metodami pomocniczymu -->
+<%=  form_for @autor, remote: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <hr />
+  <%= f.label :surname %>
+  <%= f.text_field :surname %>
+  <hr />
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <hr />
+  <%= f.submit 'save' %>
+<% end %>

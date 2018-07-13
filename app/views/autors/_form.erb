@@ -10,17 +10,3 @@
     <% end %>
   </ul>
 <% end %>
-
-<!-- forumlarze metodami pomocniczymu -->
-<%=  form_for @autor do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <hr />
-  <%= f.label :surname %>
-  <%= f.text_field :surname %>
-  <hr />
-  <%= f.label :age %>
-  <%= f.number_field :age %>
-  <hr />
-  <%= f.submit 'save' %>
-<% end %>
