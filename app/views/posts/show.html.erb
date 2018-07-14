@@ -1,24 +1,30 @@
-<h1>
+<h1 class="show-post text-center">
   Tytuł:
 </h1>
 
-<h2>
+<h2 class="post-title text-center">
   <%= @post.post_title %>
 </h2>
 
-<hr />
-
-<p>
-  Content:
-  <%= @post.content%>
+<div class="info-post">
+  <div class="content-label">
+    Content:
+    <p class="content-value"><%= @post.content%></p>
+  </div>
   <hr />
-  Autor id:
-  <%= @post.autor_id%>
+  <div class="autor-label">
+    Autor id:
+    <p class="autor-value"><%= @post.autor_id%></p>
+  </div>
   <hr />
-  Created at:
-  <%= @post.created_at%>
+  <div class="dates-label">
+    Created at:
+    <p class="dates-values"><%= @post.created_at%></p>
+  </div>
   <hr />
-  Updated at:
-  <%= @post.updated_at%>
-</p>
-  <%= link_to 'Back to all posts', posts_path%>
+  <div class="update-label">
+    Updated at:
+    <p class="update-post"><%= @post.updated_at%></p>
+  </div>
+  <%= link_to 'Back to all posts', posts_path, role: 'button', class:'btn btn-outline-success'%>
+</div>

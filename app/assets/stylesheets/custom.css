@@ -76,7 +76,6 @@ textarea {
 }
 
 #autor_age {
-  width: 60px;
   border: 2px dotted pink;
 }
 
@@ -108,44 +107,49 @@ textarea {
   display: block;
 }
 
-.show-autor {
+.show-autor, .show-post {
   font: bold;
   color: rgb(239, 63, 74);
 }
 
-.info-autor {
+.info-autor, .info-post {
   padding: 30px;
 }
 
-.age-label {
+.age-label, .content-label {
   color: #4a90e2;
   font-weight: bold;
 }
-.age-value {
+.age-value, .content-value{
   color: black;
   font-size: 25px;
 }
 
-.date-label {
+.date-label, .autor-label {
   color: #f9b121;
   font-weight: bold;
 }
 
-.date-value {
+.autor-value {
   color: black;
   font-size: 16px;
 }
 
-.update-label {
+.update-label, .dates-label, .update-label {
   color: #420d8d;
   font-weight: bold;
 }
 
-.update-value {
+.update-value, .dates-values, .update-post, .date-value {
   color: black;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 /* .form-control {
   width: 300px;
 } */
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}

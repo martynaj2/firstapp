@@ -1,12 +1,27 @@
 <%=  form_for @autor, remote: true, html: { class: "new-autor" }  do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <hr />
-  <%= f.label :surname %>
-  <%= f.text_field :surname %>
-  <hr />
-  <%= f.label :age %>
-  <%= f.number_field :age, class:'text-center'%>
+  <div class="form-group">
+    <%= f.label :name, class: "control-label" %>
+    <%= f.text_field :name, class: "form-control col-md-2 col-centered text-center", placeholder: "Enter your name"%>
+    <small id="nameHelpBlock" class="form-text text-muted">
+      Your name must be at least 2 characters long.
+    </small>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :surname, class: "control-label" %>
+    <%= f.text_field :surname, class: "form-control col-md-2 col-centered text-center", placeholder: "Enter your surname" %>
+    <small id="surnameHelpBlock" class="form-text text-muted">
+      also at least 2 characters
+    </small>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :age, class: "control-label" %>
+    <%= f.number_field :age, class: "form-control col-md-1 col-centered text-center"%>
+    <small id="ageHelpBlock" class="form-text text-muted">
+      You can lie :)
+    </small>
+  </div>
   <hr />
   <%= f.submit 'save', role: 'button', class:'btn btn-outline-success' %>
 <% end %>
