@@ -6,7 +6,7 @@
   <%= f.text_field :surname %>
   <hr />
   <%= f.label :age %>
-  <%= f.number_field :age %>
+  <%= f.number_field :age, class:'text-center'%>
   <hr />
-  <%= f.submit 'save' %>
+  <%= f.submit 'save', role: 'button', class:'btn btn-outline-success' %>
 <% end %>
