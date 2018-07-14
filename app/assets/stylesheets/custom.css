@@ -31,9 +31,18 @@ textarea {
 }
 
 .navbar-custom {
-  background-color: #ede7da80;
+  /* background-color: #ede7da80; */
+  background-color: #ede7da4d;
   margin:10px 30px 80px 30px;
   border-radius: 25px;
+}
+
+/* .custom-toggler {
+  border-color: black;
+} */
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(157, 177, 190, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 /* change the link color */
@@ -77,6 +86,12 @@ textarea {
 .row {
   height: 40px;
   line-height: 40px;
+  white-space: nowrap;
+}
+
+.table {
+  height: 10px;
+  line-height: 10px;
   white-space: nowrap;
 }
 
