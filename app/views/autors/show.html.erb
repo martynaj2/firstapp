@@ -1,15 +1,21 @@
-<h1>
- <%= @autor.fullname %>
+<h1 class="show-autor text-center">
+ <%= "hi #{@autor.fullname}!" %>
 </h1>
 
-<p>
-  Age:
-  <%= @autor.age%>
+<div class="info-autor">
+  <div class="age-label">
+    Age:
+    <p class="age-value"><%= @autor.age%></p>
+  </div>
   <hr />
-  Created at:
-  <%= @autor.created_at%>
+  <div class="date-label">
+    Created at:
+    <p class="date-value"><%= @autor.created_at%></p>
+  </div>
   <hr />
-  Updated at:
-  <%= @autor.updated_at%>
-</p>
-  <%= link_to 'Back to autors', autors_path%>
+  <div class="update-label">
+    Updated at:
+    <p class="update-value"><%= @autor.updated_at%></p>
+    <p class="button-back"><%= link_to 'Back to autors', autors_path, role: 'button', class:'btn btn-outline-success'%></p>
+  </div>
+</div>

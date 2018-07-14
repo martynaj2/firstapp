@@ -108,6 +108,44 @@ textarea {
   display: block;
 }
 
+.show-autor {
+  font: bold;
+  color: rgb(239, 63, 74);
+}
+
+.info-autor {
+  padding: 30px;
+}
+
+.age-label {
+  color: #4a90e2;
+  font-weight: bold;
+}
+.age-value {
+  color: black;
+  font-size: 25px;
+}
+
+.date-label {
+  color: #f9b121;
+  font-weight: bold;
+}
+
+.date-value {
+  color: black;
+  font-size: 16px;
+}
+
+.update-label {
+  color: #420d8d;
+  font-weight: bold;
+}
+
+.update-value {
+  color: black;
+  font-size: 16px;
+}
+
 /* .form-control {
   width: 300px;
 } */
