@@ -6,5 +6,4 @@
 
     $('.new-autor').on('ajax:complete', function(){
       $('.loader').remove();
-    });
 });
