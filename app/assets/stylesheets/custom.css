@@ -35,6 +35,11 @@ textarea {
   color: #290066;
 }
 
+.new-author-p {
+  font-size: 20px;
+  color: #009640;
+}
+
 .navbar-custom {
   /* background-color: #ede7da80; */
   background-color: #ede7da4d;
