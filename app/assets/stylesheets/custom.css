@@ -18,6 +18,11 @@ textarea {
   resize: vertical;
 }
 
+.alert {
+  width: 40%;
+  margin: 0 auto;
+}
+
 .center {
   text-align: center;
 }
@@ -33,7 +38,7 @@ textarea {
 .navbar-custom {
   /* background-color: #ede7da80; */
   background-color: #ede7da4d;
-  margin:10px 30px 80px 30px;
+  margin:10px 30px 50px 30px;
   border-radius: 25px;
 }
 
@@ -72,6 +77,10 @@ textarea {
 
 .new-autor {
   margin-top: 20px;
+  text-align: center;
+}
+
+.new-post {
   text-align: center;
 }
 
@@ -152,4 +161,9 @@ textarea {
 .col-centered {
   float: none;
   margin: 0 auto;
+}
+
+.messages {
+  font-size: 30px;
+  color: red;
 }

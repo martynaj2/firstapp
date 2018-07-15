@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <title>Testblog</title>
+    <title>Blog MJ</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script
@@ -18,7 +18,7 @@
   <body>
     <!-- korzystanie z partiali -->
     <%= render 'layouts/partials/navbar' %>
-    <%= render 'layouts/partials/flash' %>
+    <%= render 'layouts/partials/flash', flash: flash %>
     <%= yield %>
   </body>
 </html>

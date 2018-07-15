@@ -9,15 +9,24 @@
 <% end %>
 
 <!-- forumlarze metodami pomocniczymu -->
-<%=  form_for @post do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <hr />
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <hr />
-  <%= f.label :autor_id %>
-  <%= f.collection_select(:autor_id, Autor.all, :id, :name) %>
-  <hr />
-  <%= f.submit 'save' %>
+<%=  form_for @post, remote: true, html: { class: "new-post" } do |f| %>
+  <div class="form-group">
+    <%= f.label :title, class: "control-label" %>
+    <%= f.text_field :title, class: "form-control col-md-2 text-center col-centered", placeholder: "Enter post title" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :content, class: "control-label" %>
+    <%= f.text_area :content, class: "form-control col-md-2 text-center col-centered", placeholder: "What's on your mind?"  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :autor_id, class:"control-label" %>
+    <%= f.collection_select(:autor_id, Autor.all, :id, :name, { :class => 'form-control'})  %>
+    <small id="authorChoiceHelpBlock" class="form-text text-muted">
+      Choose your name
+    </small>
+    <hr />
+  </div>
+  <%= f.submit 'save', role: 'button', class:'btn btn-outline-success' %>
 <% end %>
